@@ -38,6 +38,16 @@ class VideoController extends Controller
 		$this->render('index');
 	}
 
+	public function actionSaveVideo() {
+		$streamName=$_GET["streamName"];
+		$streamDuration=$_GET["streamDuration"];
+		$userId= $_GET["userId"];
+		$recorderId= $_GET["recorderId"];
+
+		echo "save=ok";
+	}
+
+
 	public function actionUploadImage() {
 
 		//videorecorder.swf sends the name of the stream via the GET variable named "name"
@@ -46,15 +56,17 @@ class VideoController extends Controller
 		//the recorderId var contais the value of the recorderId fash var sent from VideoRecorder.html to the swf file
 		$recorderId= $_GET["recorderId"];
 
+		$appPath = Yii::getPathOfAlias('application');
+
 		//we make the snapshots folder if it does not exists
 		if(!is_dir("snapshots")){
-			$res = mkdir("snapshots",0777);
+			$res = mkdir($appPath."/snapshots",0777);
 		}
 
 		//it also sends the snapshot JPG info via POST
 		try {
 			if(isset($GLOBALS["HTTP_RAW_POST_DATA"])){
-				$image = fopen("snapshots/".$photoName,"wb");
+				$image = fopen($appPath."/snapshots/".$photoName,"wb");
 				fwrite($image , $GLOBALS["HTTP_RAW_POST_DATA"] );
 				fclose($image);
 			}
@@ -72,7 +84,7 @@ class VideoController extends Controller
 		$config['languagefile']='translations/en.xml';
 		$config['qualityurl']='avcQuality';
 		$config['maxRecordingTime']=300;
-		$config['userId']='';
+		$config['userId']='123';
 		$config['outgoingBuffer']=60;
 		$config['playbackBuffer']= 1;
 		$config['autoPlay']='false';

@@ -5,11 +5,13 @@
 		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 			id="VideoRecorder" width="324" height="276"
 			codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
-			<param name="movie" value="../swf/VideoRecorder.swf" />
+			<param name="movie" value="../swf/VideoRecorder.swf?userId=XXY&
+			qualityurl=avcQuality&recorderId=123" />
 			<param name="quality" value="high" />
 			<param name="bgcolor" value="#333333" />
 			<param name="allowScriptAccess" value="sameDomain" />
-			<embed src="../swf/VideoRecorder.swf" quality="high" bgcolor="#333333"
+			<embed src="../swf/VideoRecorder.swf?userId=XXY&
+			qualityurl=avcQuality&recorderId=123" quality="high" bgcolor="#333333"
 				width="324" height="276" name="VideoRecorder" align="middle"
 				play="true"
 				loop="false"

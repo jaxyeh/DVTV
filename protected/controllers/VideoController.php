@@ -56,17 +56,15 @@ class VideoController extends Controller
 		//the recorderId var contais the value of the recorderId fash var sent from VideoRecorder.html to the swf file
 		$recorderId= $_GET["recorderId"];
 
-		$appPath = Yii::getPathOfAlias('application');
-
 		//we make the snapshots folder if it does not exists
 		if(!is_dir("snapshots")){
-			$res = mkdir($appPath."/snapshots",0777);
+			$res = mkdir("snapshots",0777);
 		}
 
 		//it also sends the snapshot JPG info via POST
 		try {
 			if(isset($GLOBALS["HTTP_RAW_POST_DATA"])){
-				$image = fopen($appPath."/snapshots/".$photoName,"wb");
+				$image = fopen("snapshots/".$photoName,"wb");
 				fwrite($image , $GLOBALS["HTTP_RAW_POST_DATA"] );
 				fclose($image);
 			}
@@ -90,7 +88,7 @@ class VideoController extends Controller
 		$config['autoPlay']='false';
 		$config['deleteUnsavedFlv'] = 'true';
 		$config['hideSaveButton']=0;
-		$config["onSaveSuccessURL"]="index.html";
+		$config["onSaveSuccessURL"]="";
 		$config["snapshotSec"] = 5;
 		$config["snapshotEnable"] = "true";
 		$config["minRecordTime"] = 5;
@@ -100,8 +98,8 @@ class VideoController extends Controller
 		$config["showFps"] = 'true';
 		$config["recordAgain"] =  'true';
 		$config["useUserId"] =  'false';
-		$config["streamPrefix"] = "";
-		$config["streamName"] = "dvtv";
+		$config["streamPrefix"] = "dvtv_";
+		$config["streamName"] = "";
 		$config["disableAudio"] = 'true';
 		$config["chmodStreams"] = "";
 		$config["padding"]=2;
@@ -111,7 +109,7 @@ class VideoController extends Controller
 		$config["loopbackMic"]="false";
 		$config["showMenu"]="true";
 		$config["showTimer"] = 'true';
-		$config["showSoundBar"] = 'true';
+		$config["showSoundBar"] = 'false';
 
 		echo "donot=removethis";
 		foreach ($config as $key => $value){

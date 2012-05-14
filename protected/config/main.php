@@ -54,7 +54,7 @@ return array(
 				//'<controller:\w+>/avc_settings.php*'=>'video/AvcSettings',
 			),
 		),
-
+		
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),

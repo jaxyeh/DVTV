@@ -43,12 +43,17 @@ class VideoController extends Controller
 	}
 
 	public function actionSaveVideo() {
-		$streamName=$_GET["streamName"];
-		$streamDuration=$_GET["streamDuration"];
-		$userId= $_GET["userId"];
-		$recorderId= $_GET["recorderId"];
-
-		echo "save=ok";
+		$video = new Videos();
+		if (isset($_GET["streamName"])) { $video->name = $_GET["streamName"]; }
+		if (isset($_GET["streamDuration"])) { $video->duration = $_GET["streamDuration"]; }
+		if (isset($_GET["userId"])) { $video->userId = $_GET["userId"]; }
+		if (isset($_GET["recorderId"])) { $video->recorderId = $_GET["recorderId"]; }
+		if ($video->save()) {
+			// Success
+			echo "save=ok";
+		} else {
+			echo "save=failed";
+		}
 	}
 
 

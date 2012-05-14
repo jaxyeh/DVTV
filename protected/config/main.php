@@ -50,6 +50,7 @@ return array(
 				'video/translations/en.xml'=>'video/AvcTranslation',
 				'video/jpg_encoder_download.php'=>'video/uploadImage',
 				'video/save_video_to_db.php'=>'video/saveVideo',
+				'video/thankyou'=>'video/thankYou',
 				//'<controller:\w+>/avc_settings.php*'=>'video/AvcSettings',
 			),
 		),

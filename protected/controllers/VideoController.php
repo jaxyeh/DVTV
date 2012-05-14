@@ -32,7 +32,11 @@ class VideoController extends Controller
 
 	public function actionRecord() {
 		$this->render('record');
-	}	
+	}
+
+	public function actionThankYou() {
+		$this->render('thankyou');
+	}
 
 	public function actionVideos() {
 		$this->render('index');
@@ -88,7 +92,7 @@ class VideoController extends Controller
 		$config['autoPlay']='false';
 		$config['deleteUnsavedFlv'] = 'true';
 		$config['hideSaveButton']=0;
-		$config["onSaveSuccessURL"]="";
+		$config["onSaveSuccessURL"]="thankyou";
 		$config["snapshotSec"] = 5;
 		$config["snapshotEnable"] = "true";
 		$config["minRecordTime"] = 5;
@@ -98,7 +102,7 @@ class VideoController extends Controller
 		$config["showFps"] = 'true';
 		$config["recordAgain"] =  'true';
 		$config["useUserId"] =  'false';
-		$config["streamPrefix"] = "dvtv_";
+		$config["streamPrefix"] = "dvtv";
 		$config["streamName"] = "";
 		$config["disableAudio"] = 'true';
 		$config["chmodStreams"] = "";

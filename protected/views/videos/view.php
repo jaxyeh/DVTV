@@ -29,11 +29,16 @@ $this->menu=array(
 
 <script src="http://releases.flowplayer.org/js/flowplayer-3.2.9.min.js"></script>
 
-<a href="http://elmo.otterlabs.com/rawvideo/<?php echo $model->name; ?>.flv" class="player"
-style="display:block;width:425px;height:300px;margin:10px auto" id="player">
+<a href="http://elmo.otterlabs.com/rawvideo/<?php echo $model->name; ?>.flv"
+	class="player" id="player"
+	style="display:block;width:425px;height:300px;margin:10px auto;
+	background-image:url(../snapshots/<?php echo $model->name; ?>.jpg);">
+<img src="../images/play_large.png" alt="<?php echo $model->name; ?>"/>
+<!--
 <img
     src="../snapshots/<?php echo $model->name; ?>.jpg"
     alt="<?php echo $model->name; ?>" />
+-->
 </a>
 
 <!-- this script block will install Flowplayer inside previous A tag -->

@@ -19,19 +19,21 @@ class VideoController extends Controller
 	public function accessRules()
     {
         return array(
-            array('deny',
-                'actions'=>array('record', 'video', 'AvcSettings', 'AvcQuality', 'UploadImage'),
-                'users'=>array('?'),
-            ),
             array('allow',
-                'actions'=>array('record', 'video', 'AvcSettings', 'AvcQuality', 'UploadImage'),
+                'actions'=>array('record', 'video', 'AvcSettings', 'AvcQuality', 'UploadImage',
+                	'thankyou', 'savevideo', 'AvcTranslation' ),
                 'roles'=>array('@'),
             ),
+            array('deny',  // deny all users
+				'users'=>array('*'),
+			),
         );
     }
 
 	public function actionRecord() {
-		$this->render('record');
+		$recordId = uniqid('wordpress_');
+		$userId = Yii::app()->user->getName();
+		$this->render('record',array('recordId'=>$recordId, 'userId'=>$userId));
 	}
 
 	public function actionThankYou() {
@@ -91,7 +93,7 @@ class VideoController extends Controller
 		$config['languagefile']='translations/en.xml';
 		$config['qualityurl']='avcQuality';
 		$config['maxRecordingTime']=300;
-		$config['userId']='123';
+		$config['userId']=Yii::app()->user->getName();
 		$config['outgoingBuffer']=60;
 		$config['playbackBuffer']= 1;
 		$config['autoPlay']='false';

@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Videoses'=>array('index'),
+	'Videos'=>array('index'),
 	'Create',
 );
 

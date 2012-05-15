@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Videos', 'url'=>array('index')),
-	array('label'=>'Create Videos', 'url'=>array('create')),
-	array('label'=>'View Videos', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Create Video', 'url'=>array('create')),
+	array('label'=>'View Video', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Videos', 'url'=>array('admin')),
 );
 ?>

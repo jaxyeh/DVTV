@@ -6,9 +6,9 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Videos', 'url'=>array('index')),
-	array('label'=>'Create Videos', 'url'=>array('create')),
-	array('label'=>'Update Videos', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Videos', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Create Video', 'url'=>array('create')),
+	array('label'=>'Update Video', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Video', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Videos', 'url'=>array('admin')),
 );
 ?>

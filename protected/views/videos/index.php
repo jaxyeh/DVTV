@@ -4,7 +4,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Videos', 'url'=>array('create')),
+	array('label'=>'Create Video', 'url'=>array('create')),
 	array('label'=>'Manage Videos', 'url'=>array('admin')),
 );
 ?>

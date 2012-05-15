@@ -1,7 +1,7 @@
 <div class="view" style="float:left;">
 	<div class="showVideoImage" style="float:left;width:180;padding: 5px;">
 		<?php
-		$imghtml=CHtml::image(Yii::app()->basePath.'/../snapshots/'.$data->name.'.jpg',$data->name, array('width'=>'160','height'=>'120'));
+		$imghtml=CHtml::image('/../../snapshots/'.$data->name.'.jpg',$data->name, array('width'=>'160','height'=>'120'));
 		echo CHtml::link($imghtml, array('view', 'id'=>$data->id));
 		?>
 	</div>

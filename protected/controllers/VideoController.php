@@ -111,7 +111,7 @@ class VideoController extends Controller
 		$config["useUserId"] =  'false';
 		$config["streamPrefix"] = "dvtv";
 		$config["streamName"] = "";
-		$config["disableAudio"] = 'true';
+		$config["disableAudio"] = 'false';
 		$config["chmodStreams"] = "";
 		$config["padding"]=2;
 		$config["countdownTimer"]="false";
@@ -136,7 +136,7 @@ class VideoController extends Controller
 		$config['kfps'] = '10';
 		$config['width'] = '320';
 		$config['height'] = '240';
-		$config['snd'] = '5';
+		$config['snd'] = 'speex0';
 		$config['sndsilencelevel'] = '0';
 		$config['vcodec'] = 'h264_w';
 

@@ -123,7 +123,16 @@ class VideosController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Videos');
+		$this->redirect('list');
+	}
+
+	public function actionList()
+	{
+		$dataProvider=new CActiveDataProvider('Videos', array(
+			'criteria'=>array(
+				'order'=>'id DESC',
+			),
+		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

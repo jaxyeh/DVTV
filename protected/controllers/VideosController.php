@@ -27,7 +27,7 @@ class VideosController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','admin'),
+				'actions'=>array('index','view','create','update','admin', 'list'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -123,7 +123,7 @@ class VideosController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->redirect('list');
+		$this->redirect('videos/list');
 	}
 
 	public function actionList()

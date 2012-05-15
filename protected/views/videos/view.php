@@ -34,7 +34,7 @@ style="display:block;width:425px;height:300px;margin:10px auto" id="player">
 </a>
 
 <img
-    src="snapshots/<?php echo $model->name; ?>.jpg"
+    src="../snapshots/<?php echo $model->name; ?>.jpg"
     alt="<?php echo $model->name; ?>" />
 </a>
 

@@ -8,6 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'DVTV Video Recorder',
+	//'theme'=>'classic',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -54,7 +55,7 @@ return array(
 				//'<controller:\w+>/avc_settings.php*'=>'video/AvcSettings',
 			),
 		),
-		
+
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),

@@ -30,7 +30,7 @@
 			'items'=>array(
 				//array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Record a Video', 'url'=>array('/video/record'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Videos', 'url'=>array('/video/videos'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Videos', 'url'=>array('/videos'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

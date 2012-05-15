@@ -29,23 +29,39 @@ $this->menu=array(
 
 <script src="http://releases.flowplayer.org/js/flowplayer-3.2.9.min.js"></script>
 
+<style>
+/* styling of the container. */
+a.player {
+    display:block;
+    width: 320px;
+    height:240px;
+    text-align:center;
+    margin:15px;
+    float:left;
+    border:1px solid #999;
+}
+
+/* play button */
+a.player img {
+    margin-top:70px;
+    border:0px;
+}
+
+/* when container is hovered we alter the border color */
+a.player:hover {
+    border:1px solid #000;
+}
+</style>
+
+
 <a href="http://elmo.otterlabs.com/rawvideo/<?php echo $model->name; ?>.flv"
 	class="player" id="player"
-	style="display:block;width:425px;height:300px;margin:10px auto;
+	style="display:block;width:320px;height:240px;margin:10px auto;
 	background-image:url(../snapshots/<?php echo $model->name; ?>.jpg);">
-<img src="../images/play_large.png" alt="<?php echo $model->name; ?>"/>
-<!--
-<img
-    src="../snapshots/<?php echo $model->name; ?>.jpg"
-    alt="<?php echo $model->name; ?>" />
--->
+	<img src="../images/play_large.png" alt="<?php echo $model->name; ?>"/>
 </a>
 
 <!-- this script block will install Flowplayer inside previous A tag -->
 <script>
-flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.10.swf");
+	flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.10.swf");
 </script>
-
-<!--
-<script type="text/javascript" src="http://cdn.sublimevideo.net/js/tpva14ln.js"></script>
--->

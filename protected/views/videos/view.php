@@ -53,7 +53,6 @@ a.player:hover {
 }
 </style>
 
-
 <a href="http://elmo.otterlabs.com/rawvideo/<?php echo $model->name; ?>.flv"
 	class="player" id="player"
 	style="display:block;width:320px;height:240px;margin:10px auto;
@@ -63,5 +62,12 @@ a.player:hover {
 
 <!-- this script block will install Flowplayer inside previous A tag -->
 <script>
-	flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.10.swf");
+flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.10.swf", {
+	plugins:  {
+		controls:  {
+			volume: false,
+			mute: false,
+		}
+	}
+});
 </script>

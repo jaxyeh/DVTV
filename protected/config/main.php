@@ -55,20 +55,20 @@ return array(
 				//'<controller:\w+>/avc_settings.php*'=>'video/AvcSettings',
 			),
 		),
-
+/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
+		*/
 		// uncomment the following to use a MySQL database
-		/*
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
+			'connectionString' => 'mysql:host=localhost;dbname=dvtv',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'otterlabs',
 			'charset' => 'utf8',
 		),
-		*/
+
 		'viewRenderer'=>array(
             'class'=>'CPradoViewRenderer',
         ),

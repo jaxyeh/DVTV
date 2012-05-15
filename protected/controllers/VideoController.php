@@ -22,7 +22,7 @@ class VideoController extends Controller
             array('allow',
                 'actions'=>array('record', 'video', 'AvcSettings', 'AvcQuality', 'UploadImage',
                 	'thankyou', 'savevideo', 'AvcTranslation' ),
-                'roles'=>array('@'),
+                'users'=>array('@'),
             ),
             array('deny',  // deny all users
 				'users'=>array('*'),

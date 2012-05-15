@@ -2,7 +2,7 @@
 
 	<div class="showVideoImage" style="float:left;width:100;padding: 5px;">
 		<?php
-		$imghtml=CHtml::image($data->name.'.jpg',$data->name);
+		$imghtml=CHtml::image('snapshots/'.$data->name.'.jpg',$data->name);
 		echo CHtml::link($imghtml, array('view', 'id'=>$data->id));
 		?>
 	</div>

@@ -29,13 +29,9 @@ $this->menu=array(
 
 <script src="http://releases.flowplayer.org/js/flowplayer-3.2.9.min.js"></script>
 
-<a href="http://elmo.otterlabs.com/rawvideo/<?php echo $model->name; ?>.flv class="player"
+<a href="http://elmo.otterlabs.com/rawvideo/<?php echo $model->name; ?>.flv" class="player"
 style="display:block;width:425px;height:300px;margin:10px auto" id="player">
 </a>
-
-$imghtml=CHtml::image('snapshots/'.$data->name.'.jpg',$data->name, array('width'=>'80','height'=>'60'));
-		echo CHtml::link($imghtml, array('view', 'id'=>$data->id));
-		?>
 
 <img
     src="snapshots/<?php echo $model->name; ?>.jpg"

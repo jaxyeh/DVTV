@@ -62,6 +62,16 @@ class VideoController extends Controller
 		}
 	}
 
+	public function actionEncode() {
+		if (isset($_GET["streamName"])) {
+			$stream_name = $_GET["streamName"];
+			$output = shell_exec('ffmpeg -i '.$stream_name.'.flv -an -sameq -b:v 320k -y '.$stream_name.'_tmp.mp4 && qt-faststart '.$stream_name.'_tmp.mp4 '.$stream_name.'.mp4');
+			echo $output;
+		} else {
+			echo 'Error: no stream name!';
+		}
+	}
+
 
 	public function actionUploadImage() {
 

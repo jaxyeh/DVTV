@@ -119,7 +119,7 @@ class VideoController extends Controller
 		$config["chmodStreams"] = "";
 		$config["padding"]=2;
 		$config["countdownTimer"]="false";
-		$config["overlayPath"]="../images/fullStar.png";
+		$config["overlayPath"]="../images/deafvideo_logo.png";
 		$config["overlayPosition"]="tr";
 		$config["loopbackMic"]="false";
 		$config["showMenu"]="true";
@@ -139,10 +139,10 @@ class VideoController extends Controller
 			$config['bytes'] = '0';
 			$config['quality'] = '90';
 			$config['fps'] = '30';
-			$config['kfps'] = '10';
+			$config['kfps'] = '15';
 			$config['width'] = '320';
 			$config['height'] = '240';
-			$config['snd'] = 'speex0';
+			$config['snd'] = '8';
 			$config['sndsilencelevel'] = '0';
 			$config['vcodec'] = 'h264_w';
 		} else {
@@ -150,10 +150,10 @@ class VideoController extends Controller
 			$config['bytes'] = '50000';
 			$config['quality'] = '90';
 			$config['fps'] = '25';
-			$config['kfps'] = '10';
+			$config['kfps'] = '15';
 			$config['width'] = '320';
 			$config['height'] = '240';
-			$config['snd'] = 'speex0';
+			$config['snd'] = '8';
 			$config['sndsilencelevel'] = '0';
 			$config['vcodec'] = 'h264_w';
 		}

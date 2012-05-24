@@ -74,14 +74,18 @@ flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.10.swf",
 	}
 });
 </script>
-
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <h3>FLV to MP4 Pass-Through (<?php echo $model->name; ?>.mp4)</h3>
 <video id="my_video_1" class="video-js vjs-default-skin" controls
 preload="auto" width="320" height="240" poster="my_video_poster.png" data-setup="{}">
 	<source src="http://elmo.otterlabs.com/rawvideo/<?php echo $model->name; ?>.mp4" type='video/mp4'>
 </video>
+<video class="sublime" width="320" height="240" data-uid="3ce27b44" preload="none">
+	<source src="http://elmo.otterlabs.com/rawvideo/<?php echo $model->name; ?>.mp4" />
+</video>
 
-
+<?php /*
+<!--
 <h3>Re-encoded to MP4 (<?php echo $model->name; ?>_redo.mp4)</h3>
 <video id="my_video_1" class="video-js vjs-default-skin" controls
 preload="auto" width="320" height="240" poster="my_video_poster.png" data-setup="{}">
@@ -90,4 +94,4 @@ preload="auto" width="320" height="240" poster="my_video_poster.png" data-setup=
 <video class="sublime" width="320" height="240" data-uid="3ce27b44" preload="none">
 	<source src="http://elmo.otterlabs.com/rawvideo/<?php echo $model->name; ?>_redo.mp4" />
 </video>
-
+*/ ?>

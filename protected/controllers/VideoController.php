@@ -33,7 +33,9 @@ class VideoController extends Controller
 	public function actionRecord() {
 		$recordId = uniqid('wordpress_');
 		$userId = Yii::app()->user->getName();
-		$this->render('record',array('recordId'=>$recordId, 'userId'=>$userId));
+		$bandwidth = isset($GET['bandwidth']) ? $GET['bandwidth'] : '0';
+		$quality = isset($GET['quality']) ? $GET['quality'] : '0';
+		$this->render('record',array('recordId'=>$recordId, 'userId'=>$userId, 'bandwidth'=>$bandwidth, 'quality'=>$quality));
 	}
 
 	public function actionThankYou() {
@@ -51,6 +53,8 @@ class VideoController extends Controller
 		if (isset($_GET["userId"])) { $video->userId = $_GET["userId"]; }
 		if (isset($_GET["recorderId"])) { $video->recorderId = $_GET["recorderId"]; }
 		if ($video->save()) {
+			// Ffmpeg script
+			exec('ffmpeg -i '.$video->name.'.flv -an -sameq -b:v 320k -y '.$video->name.'_tmp.mp4 && qt-faststart '.$video->name.'_tmp.mp4 '.$video->name.'.mp4');
 			// Success
 			echo "save=ok";
 		} else {
@@ -129,17 +133,30 @@ class VideoController extends Controller
 	}
 
 	public function actionAvcQuality() {
-		$config['nm'] = '320x240@25fps';
-		$config['bytes'] = '0';
-		$config['quality'] = '90';
-		$config['fps'] = '25';
-		$config['kfps'] = '10';
-		$config['width'] = '320';
-		$config['height'] = '240';
-		$config['snd'] = 'speex0';
-		$config['sndsilencelevel'] = '0';
-		$config['vcodec'] = 'h264_w';
 
+		if (Yii::app()->user->getName() == 'admin') {
+			$config['nm'] = '320x240@25fps';
+			$config['bytes'] = '0';
+			$config['quality'] = '90';
+			$config['fps'] = '30';
+			$config['kfps'] = '10';
+			$config['width'] = '320';
+			$config['height'] = '240';
+			$config['snd'] = 'speex0';
+			$config['sndsilencelevel'] = '0';
+			$config['vcodec'] = 'h264_w';
+		} else {
+			$config['nm'] = '320x240@25fps';
+			$config['bytes'] = '50000';
+			$config['quality'] = '90';
+			$config['fps'] = '25';
+			$config['kfps'] = '10';
+			$config['width'] = '320';
+			$config['height'] = '240';
+			$config['snd'] = 'speex0';
+			$config['sndsilencelevel'] = '0';
+			$config['vcodec'] = 'h264_w';
+		}
 		$this->layout = 'xml';
 		$this->render('videoquality', array('config' => $config));
 	}

@@ -64,9 +64,16 @@ class VideoController extends Controller
 
 	public function actionEncode() {
 		if (isset($_GET["streamName"])) {
+echo 'processing...<br/>';
+			$stream_path = '../rawvideo/';
 			$stream_name = $_GET["streamName"];
-			$output = shell_exec('ffmpeg -i '.$stream_name.'.flv -an -sameq -b:v 320k -y '.$stream_name.'_tmp.mp4 && qt-faststart '.$stream_name.'_tmp.mp4 '.$stream_name.'.mp4');
-			echo $output;
+			$output = shell_exec('ffmpeg -i '.$stream_path.$stream_name.'.flv -an -sameq -b:v 320k -y '.$stream_path.$stream_name.'_tmp.mp4');
+			$output2 = shell_exec('qt-faststart '.$stream_path.$stream_name.'_tmp.mp4 '.$stream_path.$stream_name.'.mp4 && rm '.$stream_path.$stream_name.'_tmp.mp4');
+			echo "<pre>$output$output2</pre>";
+
+$output = shell_exec("ls -lh $stream_path | egrep $stream_name");
+echo "<pre>$output</pre>";
+
 		} else {
 			echo 'Error: no stream name!';
 		}
